@@ -1,0 +1,4 @@
+train: /users/vutomi/Source_Detection/YOLOs/Data/images/abell_133
+val: /users/vutomi/Source_Detection/YOLOs/Data/images/val
+nc: 1
+names: ['source']

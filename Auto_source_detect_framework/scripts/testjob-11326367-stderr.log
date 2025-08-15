@@ -1,0 +1,352 @@
+/var/lib/slurm/slurmd/job11326367/slurm_script: line 15: /users/vutomi/venv/bin/activate: No such file or directory
+
+[notice] A new release of pip is available: 24.3.1 -> 25.2
+[notice] To update, run: pip install --upgrade pip
+
+[notice] A new release of pip is available: 24.3.1 -> 25.2
+[notice] To update, run: pip install --upgrade pip
+[34m[1mtrain: [0mweights=/users/vutomi/Source_Detection/YOLOs/training_models/yolov5/runs/train/exp5/weights/best.pt, cfg=/users/vutomi/Auto_source_detect_framework/scripts/yolov5/models/custom_yolov5s.yaml, data=/users/vutomi/Auto_source_detect_framework/configs/data.yaml, hyp=../../.local/lib/python3.10/site-packages/yolov5/data/hyps/hyp.scratch-low.yaml, epochs=30, batch_size=16, imgsz=1024, rect=False, resume=False, nosave=False, noval=False, noautoanchor=False, noplots=False, evolve=None, bucket=, cache=None, image_weights=False, device=, multi_scale=False, single_cls=False, optimizer=SGD, sync_bn=False, workers=8, project=/users/vutomi/Source_Detection/YOLOs/outputs/runs, name=YOLO + cbam, exist_ok=True, quad=False, cos_lr=False, label_smoothing=0.0, patience=100, freeze=[0], save_period=-1, seed=0, local_rank=-1, entity=None, bbox_interval=-1, artifact_alias=latest, neptune_token=None, neptune_project=None, neptune_resume_id=None, s3_upload_dir=None, upload_dataset=False, hf_model_id=None, hf_token=None, hf_private=False, hf_dataset_id=None, roboflow_token=None, roboflow_upload=False
+YOLOv5 🚀 2025-8-14 Python-3.10.16 torch-2.7.0+cu126 CUDA:0 (Tesla P100-PCIE-12GB, 12187MiB)
+
+[34m[1mhyperparameters: [0mlr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=0.05, cls=0.5, cls_pw=1.0, obj=1.0, obj_pw=1.0, iou_t=0.2, anchor_t=4.0, fl_gamma=0.0, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, mosaic=1.0, mixup=0.0, copy_paste=0.0
+[34m[1mClearML: [0mrun 'pip install clearml' to automatically track, visualize and remotely train YOLOv5 🚀 in ClearML
+[34m[1mComet: [0mrun 'pip install comet_ml' to automatically track and visualize YOLOv5 🚀 runs in Comet
+[34m[1mTensorBoard: [0mStart with 'tensorboard --logdir /users/vutomi/Source_Detection/YOLOs/outputs/runs', view at http://localhost:6006/
+
+                 from  n    params  module                                  arguments                     
+  0                -1  1      3520  yolov5.models.common.Conv               [3, 32, 6, 2, 2]              
+  1                -1  1     18560  yolov5.models.common.Conv               [32, 64, 3, 2]                
+  2                -1  1     18816  yolov5.models.common.C3                 [64, 64, 1]                   
+  3                -1  1     73984  yolov5.models.common.Conv               [64, 128, 3, 2]               
+  4                -1  2    115712  yolov5.models.common.C3                 [128, 128, 2]                 
+  5                -1  1    295424  yolov5.models.common.Conv               [128, 256, 3, 2]              
+  6                -1  3    625152  yolov5.models.common.C3                 [256, 256, 3]                 
+  7                -1  1   1180672  yolov5.models.common.Conv               [256, 512, 3, 2]              
+  8                -1  1   1182720  yolov5.models.common.C3                 [512, 512, 1]                 
+  9                -1  1    656896  yolov5.models.common.SPPF               [512, 512, 5]                 
+ 10                -1  1    131584  yolov5.models.common.Conv               [512, 256, 1, 1]              
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']          
+ 12           [-1, 6]  1         0  yolov5.models.common.Concat             [1]                           
+ 13                -1  1    361984  yolov5.models.common.C3                 [512, 256, 1, False]          
+ 14                -1  1     33024  yolov5.models.common.Conv               [256, 128, 1, 1]              
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']          
+ 16           [-1, 4]  1         0  yolov5.models.common.Concat             [1]                           
+ 17                -1  1     90880  yolov5.models.common.C3                 [256, 128, 1, False]          
+ 18                -1  1    147712  yolov5.models.common.Conv               [128, 128, 3, 2]              
+ 19          [-1, 14]  1         0  yolov5.models.common.Concat             [1]                           
+ 20                -1  1    296448  yolov5.models.common.C3                 [256, 256, 1, False]          
+ 21                -1  1    590336  yolov5.models.common.Conv               [256, 256, 3, 2]              
+ 22          [-1, 10]  1         0  yolov5.models.common.Concat             [1]                           
+ 23                -1  1   1182720  yolov5.models.common.C3                 [512, 512, 1, False]          
+ 24      [17, 20, 23]  1     16182  yolov5.models.yolo.Detect               [1, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [128, 256, 512]]
+custom_YOLOv5s summary: 214 layers, 7022326 parameters, 7022326 gradients, 15.9 GFLOPs
+
+Transferred 348/349 items from /users/vutomi/Source_Detection/YOLOs/training_models/yolov5/runs/train/exp5/weights/best.pt
+`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+[34m[1mAMP: [0mchecks passed ✅
+[34m[1moptimizer:[0m SGD(lr=0.01) with parameter groups 57 weight(decay=0.0), 60 weight(decay=0.0005), 60 bias
+[34m[1mtrain: [0mScanning /users/vutomi/Source_Detection/YOLOs/Data/images/abell_133/labels.cache... 1 images, 0 backgrounds, 0 corrupt: 100%|██████████| 1/1 [00:00<?, ?it/s][34m[1mtrain: [0mScanning /users/vutomi/Source_Detection/YOLOs/Data/images/abell_133/labels.cache... 1 images, 0 backgrounds, 0 corrupt: 100%|██████████| 1/1 [00:00<?, ?it/s]
+[34m[1mval: [0mScanning /users/vutomi/Source_Detection/YOLOs/Data/labels/patches.cache... 36 images, 0 backgrounds, 0 corrupt: 100%|██████████| 36/36 [00:00<?, ?it/s][34m[1mval: [0mScanning /users/vutomi/Source_Detection/YOLOs/Data/labels/patches.cache... 36 images, 0 backgrounds, 0 corrupt: 100%|██████████| 36/36 [00:00<?, ?it/s]
+
+[34m[1mAutoAnchor: [0m0.81 anchors/target, 0.804 Best Possible Recall (BPR). Anchors are a poor fit to dataset ⚠️, attempting to improve...
+[34m[1mAutoAnchor: [0mWARNING ⚠️ Extremely small objects found: 105 of 1898 labels are <3 pixels in size
+[34m[1mAutoAnchor: [0mRunning kmeans for 9 anchors on 1897 points...
+  0%|          | 0/1000 [00:00<?, ?it/s]  1%|          | 9/1000 [00:00<00:12, 77.49it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9430:   2%|▏         | 24/1000 [00:00<00:08, 109.32it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9430:   4%|▎         | 35/1000 [00:00<00:10, 89.95it/s] [34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9430:   4%|▍         | 45/1000 [00:00<00:12, 77.13it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9431:   6%|▌         | 56/1000 [00:00<00:12, 73.75it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9431:   7%|▋         | 70/1000 [00:00<00:12, 73.25it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9438:   8%|▊         | 84/1000 [00:01<00:11, 82.80it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9438:   9%|▉         | 93/1000 [00:01<00:14, 62.11it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9449:  13%|█▎        | 132/1000 [00:01<00:07, 123.15it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9460:  15%|█▍        | 148/1000 [00:01<00:07, 117.68it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9464:  16%|█▌        | 162/1000 [00:01<00:07, 108.35it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9464:  20%|██        | 201/1000 [00:01<00:05, 136.21it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9465:  28%|██▊       | 279/1000 [00:02<00:03, 215.49it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9465:  32%|███▏      | 316/1000 [00:02<00:03, 203.11it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9465:  36%|███▌      | 362/1000 [00:02<00:03, 210.96it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9465:  42%|████▏     | 417/1000 [00:02<00:02, 242.75it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9466:  47%|████▋     | 466/1000 [00:02<00:02, 251.83it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9466:  53%|█████▎    | 530/1000 [00:03<00:01, 278.63it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9468:  58%|█████▊    | 576/1000 [00:03<00:01, 275.63it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9468:  62%|██████▏   | 616/1000 [00:03<00:01, 262.35it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9472:  66%|██████▌   | 660/1000 [00:03<00:01, 258.19it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9473:  70%|███████   | 705/1000 [00:03<00:01, 257.97it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9473:  82%|████████▏ | 824/1000 [00:03<00:00, 439.09it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9473:  88%|████████▊ | 878/1000 [00:04<00:00, 392.65it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9475:  92%|█████████▎| 925/1000 [00:04<00:00, 379.43it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9475:  98%|█████████▊| 982/1000 [00:04<00:00, 350.10it/s][34m[1mAutoAnchor: [0mEvolving anchors with Genetic Algorithm: fitness = 0.9475: 100%|██████████| 1000/1000 [00:04<00:00, 225.92it/s]
+[34m[1mAutoAnchor: [0mthr=0.25: 1.0000 best possible recall, 8.98 anchors past thr
+[34m[1mAutoAnchor: [0mn=9, img_size=1024, metric_all=0.705/0.947-mean/best, past_thr=0.706-mean: 4,2, 3,3, 4,3, 4,3, 4,4, 5,4, 6,4, 7,5, 13,7
+[34m[1mAutoAnchor: [0mDone ✅ (optional: update model *.yaml to use these anchors in the future)
+Plotting labels to /users/vutomi/Source_Detection/YOLOs/outputs/runs/YOLO + cbam/labels.jpg... 
+`torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+Image sizes 1024 train, 1024 val
+Using 0 dataloader workers
+Logging results to [1m/users/vutomi/Source_Detection/YOLOs/outputs/runs/YOLO + cbam[0m
+Starting training for 30 epochs...
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+       0/29     0.596G      0.213     0.3978          0       1613       1024:   0%|          | 0/1 [00:03<?, ?it/s]Exception in thread Thread-4 (plot_images):
+Traceback (most recent call last):
+  File "/software/common/python/3.10.16/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/software/common/python/3.10.16/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/users/vutomi/.local/lib/python3.10/site-packages/yolov5/utils/plots.py", line 290, in plot_images
+    annotator.box_label(box, label, color=color)
+  File "/users/vutomi/.local/lib/python3.10/site-packages/yolov5/utils/plots.py", line 91, in box_label
+    w, h = self.font.getsize(label)  # text width, height (WARNING: deprecated) in 9.2.0
+AttributeError: 'FreeTypeFont' object has no attribute 'getsize'
+       0/29     0.596G      0.213     0.3978          0       1613       1024: 100%|██████████| 1/1 [00:06<00:00,  6.46s/it]       0/29     0.596G      0.213     0.3978          0       1613       1024: 100%|██████████| 1/1 [00:06<00:00,  6.46s/it]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.67s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:03<00:00,  1.40s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:03<00:00,  1.59s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+       1/29      3.68G     0.2237     0.3886          0       3923       1024:   0%|          | 0/1 [00:00<?, ?it/s]       1/29      3.68G     0.2237     0.3886          0       3923       1024: 100%|██████████| 1/1 [00:00<00:00,  2.98it/s]       1/29      3.68G     0.2237     0.3886          0       3923       1024: 100%|██████████| 1/1 [00:00<00:00,  2.97it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]Exception in thread Thread-5 (plot_images):
+Traceback (most recent call last):
+  File "/software/common/python/3.10.16/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/software/common/python/3.10.16/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/users/vutomi/.local/lib/python3.10/site-packages/yolov5/utils/plots.py", line 290, in plot_images
+    annotator.box_label(box, label, color=color)
+  File "/users/vutomi/.local/lib/python3.10/site-packages/yolov5/utils/plots.py", line 91, in box_label
+    w, h = self.font.getsize(label)  # text width, height (WARNING: deprecated) in 9.2.0
+AttributeError: 'FreeTypeFont' object has no attribute 'getsize'
+WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.59s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:03<00:00,  1.32s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:03<00:00,  1.51s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+       2/29      3.69G      0.221     0.4119          0       3038       1024:   0%|          | 0/1 [00:00<?, ?it/s]       2/29      3.69G      0.221     0.4119          0       3038       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]       2/29      3.69G      0.221     0.4119          0       3038       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]Exception in thread Thread-6 (plot_images):
+Traceback (most recent call last):
+  File "/software/common/python/3.10.16/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/software/common/python/3.10.16/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/users/vutomi/.local/lib/python3.10/site-packages/yolov5/utils/plots.py", line 290, in plot_images
+    annotator.box_label(box, label, color=color)
+  File "/users/vutomi/.local/lib/python3.10/site-packages/yolov5/utils/plots.py", line 91, in box_label
+    w, h = self.font.getsize(label)  # text width, height (WARNING: deprecated) in 9.2.0
+AttributeError: 'FreeTypeFont' object has no attribute 'getsize'
+WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.56s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:03<00:00,  1.31s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:03<00:00,  1.50s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+       3/29       3.7G     0.2093     0.3612          0       1205       1024:   0%|          | 0/1 [00:00<?, ?it/s]       3/29       3.7G     0.2093     0.3612          0       1205       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]       3/29       3.7G     0.2093     0.3612          0       1205       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.53s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.30s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.48s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+       4/29      3.72G     0.2138     0.4128          0       1818       1024:   0%|          | 0/1 [00:00<?, ?it/s]       4/29      3.72G     0.2138     0.4128          0       1818       1024: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]       4/29      3.72G     0.2138     0.4128          0       1818       1024: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.53s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.30s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.48s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+       5/29      3.73G     0.2228     0.1665          0        994       1024:   0%|          | 0/1 [00:00<?, ?it/s]       5/29      3.73G     0.2228     0.1665          0        994       1024: 100%|██████████| 1/1 [00:00<00:00,  3.11it/s]       5/29      3.73G     0.2228     0.1665          0        994       1024: 100%|██████████| 1/1 [00:00<00:00,  3.11it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.56s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.30s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.49s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+       6/29      3.73G     0.2105     0.3822          0       1313       1024:   0%|          | 0/1 [00:00<?, ?it/s]       6/29      3.73G     0.2105     0.3822          0       1313       1024: 100%|██████████| 1/1 [00:00<00:00,  3.07it/s]       6/29      3.73G     0.2105     0.3822          0       1313       1024: 100%|██████████| 1/1 [00:00<00:00,  3.07it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.51s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.28s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.46s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+       7/29      3.73G     0.2104     0.3854          0       1314       1024:   0%|          | 0/1 [00:00<?, ?it/s]       7/29      3.73G     0.2104     0.3854          0       1314       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]       7/29      3.73G     0.2104     0.3854          0       1314       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.55s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.30s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.49s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+       8/29      3.73G     0.2239     0.3263          0       3634       1024:   0%|          | 0/1 [00:00<?, ?it/s]       8/29      3.73G     0.2239     0.3263          0       3634       1024: 100%|██████████| 1/1 [00:00<00:00,  3.11it/s]       8/29      3.73G     0.2239     0.3263          0       3634       1024: 100%|██████████| 1/1 [00:00<00:00,  3.11it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.50s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.29s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.47s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+       9/29      3.73G     0.2162     0.4196          0       2284       1024:   0%|          | 0/1 [00:00<?, ?it/s]       9/29      3.73G     0.2162     0.4196          0       2284       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]       9/29      3.73G     0.2162     0.4196          0       2284       1024: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.55s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.30s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.48s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      10/29      3.74G     0.2091     0.3649          0       1184       1024:   0%|          | 0/1 [00:00<?, ?it/s]      10/29      3.74G     0.2091     0.3649          0       1184       1024: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]      10/29      3.74G     0.2091     0.3649          0       1184       1024: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.53s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.29s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.48s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      11/29      3.75G     0.2106     0.3772          0       1351       1024:   0%|          | 0/1 [00:00<?, ?it/s]      11/29      3.75G     0.2106     0.3772          0       1351       1024: 100%|██████████| 1/1 [00:00<00:00,  3.07it/s]      11/29      3.75G     0.2106     0.3772          0       1351       1024: 100%|██████████| 1/1 [00:00<00:00,  3.07it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.47s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.27s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.45s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      12/29      3.77G     0.2208     0.1122          0        364       1024:   0%|          | 0/1 [00:00<?, ?it/s]      12/29      3.77G     0.2208     0.1122          0        364       1024: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]      12/29      3.77G     0.2208     0.1122          0        364       1024: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.53s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.30s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.49s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      13/29       3.8G      0.221     0.3474          0       2804       1024:   0%|          | 0/1 [00:00<?, ?it/s]      13/29       3.8G      0.221     0.3474          0       2804       1024: 100%|██████████| 1/1 [00:00<00:00,  3.08it/s]      13/29       3.8G      0.221     0.3474          0       2804       1024: 100%|██████████| 1/1 [00:00<00:00,  3.08it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.54s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.30s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.49s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      14/29       3.8G     0.2172      0.422          0       2432       1024:   0%|          | 0/1 [00:00<?, ?it/s]      14/29       3.8G     0.2172      0.422          0       2432       1024: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]      14/29       3.8G     0.2172      0.422          0       2432       1024: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.54s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.30s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.49s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      15/29       3.8G     0.2149     0.4132          0       2031       1024:   0%|          | 0/1 [00:00<?, ?it/s]      15/29       3.8G     0.2149     0.4132          0       2031       1024: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]      15/29       3.8G     0.2149     0.4132          0       2031       1024: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.55s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.30s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.49s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      16/29       3.8G     0.2154     0.4369          0       2197       1024:   0%|          | 0/1 [00:00<?, ?it/s]      16/29       3.8G     0.2154     0.4369          0       2197       1024: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]      16/29       3.8G     0.2154     0.4369          0       2197       1024: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.54s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.29s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.48s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      17/29       3.8G     0.2078     0.3713          0       1116       1024:   0%|          | 0/1 [00:00<?, ?it/s]      17/29       3.8G     0.2078     0.3713          0       1116       1024: 100%|██████████| 1/1 [00:00<00:00,  3.29it/s]      17/29       3.8G     0.2078     0.3713          0       1116       1024: 100%|██████████| 1/1 [00:00<00:00,  3.29it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.52s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.28s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.47s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      18/29       3.8G     0.2194     0.4205          0       2873       1024:   0%|          | 0/1 [00:00<?, ?it/s]      18/29       3.8G     0.2194     0.4205          0       2873       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]      18/29       3.8G     0.2194     0.4205          0       2873       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.54s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.29s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.48s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      19/29       3.8G     0.2205     0.3634          0       2894       1024:   0%|          | 0/1 [00:00<?, ?it/s]      19/29       3.8G     0.2205     0.3634          0       2894       1024: 100%|██████████| 1/1 [00:00<00:00,  3.30it/s]      19/29       3.8G     0.2205     0.3634          0       2894       1024: 100%|██████████| 1/1 [00:00<00:00,  3.30it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.52s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.29s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.47s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      20/29       3.8G     0.2212      0.127          0        506       1024:   0%|          | 0/1 [00:00<?, ?it/s]      20/29       3.8G     0.2212      0.127          0        506       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]      20/29       3.8G     0.2212      0.127          0        506       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.53s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.29s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.48s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      21/29       3.8G     0.2145     0.4129          0       1968       1024:   0%|          | 0/1 [00:00<?, ?it/s]      21/29       3.8G     0.2145     0.4129          0       1968       1024: 100%|██████████| 1/1 [00:00<00:00,  3.29it/s]      21/29       3.8G     0.2145     0.4129          0       1968       1024: 100%|██████████| 1/1 [00:00<00:00,  3.29it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.53s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.30s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.48s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      22/29       3.8G     0.2238     0.2908          0       3029       1024:   0%|          | 0/1 [00:00<?, ?it/s]      22/29       3.8G     0.2238     0.2908          0       3029       1024: 100%|██████████| 1/1 [00:00<00:00,  3.08it/s]      22/29       3.8G     0.2238     0.2908          0       3029       1024: 100%|██████████| 1/1 [00:00<00:00,  3.08it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.54s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.29s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.48s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      23/29       3.8G     0.2203     0.1015          0        319       1024:   0%|          | 0/1 [00:00<?, ?it/s]      23/29       3.8G     0.2203     0.1015          0        319       1024: 100%|██████████| 1/1 [00:00<00:00,  3.29it/s]      23/29       3.8G     0.2203     0.1015          0        319       1024: 100%|██████████| 1/1 [00:00<00:00,  3.29it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.54s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.30s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.49s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      24/29       3.8G     0.2069     0.3623          0       1009       1024:   0%|          | 0/1 [00:00<?, ?it/s]      24/29       3.8G     0.2069     0.3623          0       1009       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]      24/29       3.8G     0.2069     0.3623          0       1009       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.54s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.30s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.49s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      25/29       3.8G     0.2057     0.3321          0        905       1024:   0%|          | 0/1 [00:00<?, ?it/s]      25/29       3.8G     0.2057     0.3321          0        905       1024: 100%|██████████| 1/1 [00:00<00:00,  3.28it/s]      25/29       3.8G     0.2057     0.3321          0        905       1024: 100%|██████████| 1/1 [00:00<00:00,  3.28it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.52s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.28s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.47s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      26/29       3.8G     0.2182     0.3183          0       1988       1024:   0%|          | 0/1 [00:00<?, ?it/s]      26/29       3.8G     0.2182     0.3183          0       1988       1024: 100%|██████████| 1/1 [00:00<00:00,  3.07it/s]      26/29       3.8G     0.2182     0.3183          0       1988       1024: 100%|██████████| 1/1 [00:00<00:00,  3.07it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.53s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.29s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.47s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      27/29       3.8G     0.2117     0.3992          0       1565       1024:   0%|          | 0/1 [00:00<?, ?it/s]      27/29       3.8G     0.2117     0.3992          0       1565       1024: 100%|██████████| 1/1 [00:00<00:00,  3.30it/s]      27/29       3.8G     0.2117     0.3992          0       1565       1024: 100%|██████████| 1/1 [00:00<00:00,  3.29it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.50s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.28s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.46s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      28/29       3.8G     0.2096     0.3963          0       1338       1024:   0%|          | 0/1 [00:00<?, ?it/s]      28/29       3.8G     0.2096     0.3963          0       1338       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]      28/29       3.8G     0.2096     0.3963          0       1338       1024: 100%|██████████| 1/1 [00:00<00:00,  3.10it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.53s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.29s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.48s/it]
+                   all         36        227          0          0          0          0
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/1 [00:00<?, ?it/s]`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+      29/29       3.8G     0.2064     0.3473          0        985       1024:   0%|          | 0/1 [00:00<?, ?it/s]      29/29       3.8G     0.2064     0.3473          0        985       1024: 100%|██████████| 1/1 [00:00<00:00,  3.26it/s]      29/29       3.8G     0.2064     0.3473          0        985       1024: 100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.49s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.28s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:02<00:00,  1.46s/it]
+                   all         36        227          0          0          0          0
+
+30 epochs completed in 0.035 hours.
+Optimizer stripped from /users/vutomi/Source_Detection/YOLOs/outputs/runs/YOLO + cbam/weights/last.pt, 14.8MB
+Optimizer stripped from /users/vutomi/Source_Detection/YOLOs/outputs/runs/YOLO + cbam/weights/best.pt, 14.8MB
+
+Validating /users/vutomi/Source_Detection/YOLOs/outputs/runs/YOLO + cbam/weights/best.pt...
+Fusing layers... 
+custom_YOLOv5s summary: 157 layers, 7012822 parameters, 0 gradients, 15.8 GFLOPs
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/2 [00:00<?, ?it/s]WARNING ⚠️ NMS time limit 2.100s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  50%|█████     | 1/2 [00:02<00:02,  2.54s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:03<00:00,  1.38s/it]                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 2/2 [00:03<00:00,  1.56s/it]
+                   all         36        227          0          0          0          0
+Exception in thread Thread-9 (plot_images):
+Traceback (most recent call last):
+  File "/software/common/python/3.10.16/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/software/common/python/3.10.16/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/users/vutomi/.local/lib/python3.10/site-packages/yolov5/utils/plots.py", line 290, in plot_images
+    annotator.box_label(box, label, color=color)
+  File "/users/vutomi/.local/lib/python3.10/site-packages/yolov5/utils/plots.py", line 91, in box_label
+    w, h = self.font.getsize(label)  # text width, height (WARNING: deprecated) in 9.2.0
+AttributeError: 'FreeTypeFont' object has no attribute 'getsize'
+Exception in thread Thread-7 (plot_images):
+Traceback (most recent call last):
+  File "/software/common/python/3.10.16/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/software/common/python/3.10.16/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/users/vutomi/.local/lib/python3.10/site-packages/yolov5/utils/plots.py", line 290, in plot_images
+    annotator.box_label(box, label, color=color)
+  File "/users/vutomi/.local/lib/python3.10/site-packages/yolov5/utils/plots.py", line 91, in box_label
+    w, h = self.font.getsize(label)  # text width, height (WARNING: deprecated) in 9.2.0
+AttributeError: 'FreeTypeFont' object has no attribute 'getsize'
+Exception in thread Thread-8 (plot_images):
+Traceback (most recent call last):
+  File "/software/common/python/3.10.16/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/software/common/python/3.10.16/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/users/vutomi/.local/lib/python3.10/site-packages/yolov5/utils/plots.py", line 290, in plot_images
+    annotator.box_label(box, label, color=color)
+  File "/users/vutomi/.local/lib/python3.10/site-packages/yolov5/utils/plots.py", line 91, in box_label
+    w, h = self.font.getsize(label)  # text width, height (WARNING: deprecated) in 9.2.0
+AttributeError: 'FreeTypeFont' object has no attribute 'getsize'
+Results saved to [1m/users/vutomi/Source_Detection/YOLOs/outputs/runs/YOLO + cbam[0m

@@ -1,0 +1,8 @@
+astropy
+bdsf
+matplotlib
+numpy
+opencv-python
+torch
+yolov5
+pandas
