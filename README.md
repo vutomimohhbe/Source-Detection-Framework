@@ -2,7 +2,7 @@
 
 
 
-<center><img src="logo.jpg" alt="Logo" ></center>
+<center><img src="logo2.jpg" alt="Logo" ></center>
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/vutomimohhbe/Source-Detection-Framework)
 ![GitHub last commit](https://img.shields.io/github/last-commit/vutomimohhbe/Source-Detection-Framework)
