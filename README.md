@@ -104,6 +104,7 @@ Please ensure your code follows the project's coding standards and includes rele
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📬 Contact
-Vutomi - [vutomimohhbe](https://github.com/vutomimohhbe)  
+Email - [vutomimohube11@gmail.com](vutomimohube11@gmail.com) 
+Alt Email - [u22679139@tuks.co.za]
 Project Link: [https://github.com/vutomimohhbe/Source-Detection-Framework](https://github.com/vutomimohhbe/Source-Detection-Framework)
 
