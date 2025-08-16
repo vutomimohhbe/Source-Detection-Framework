@@ -87,7 +87,7 @@ The `Project-Results` directory contains:
 - **Sample Outputs**: Examples of detected astronomical sources.
 
 Example visualization:
-![Sample Detection](Project-Results/sample_output.png)
+![Sample Detection](Project-Results/val_batch0_labels.jpg)
 *Note*: Replace with actual image paths if available.
 
 ## 🤝 Contributing
